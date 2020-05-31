@@ -1,0 +1,139 @@
+{% extends 'projects/basic.html' %}
+{% block css %}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/media/main/henry-co--odUkx8C2gg-unsplash.jpg');
+  background-repeat: no-repeat;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 28%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 0 -5px;
+  padding-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 90%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+{% endblock css %}
+
+{% block body %}
+<!-- MAIN (Center website) -->
+<div class="w3-main" style="margin-left:310px;">
+  <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
+      class="fa fa-bars"></i></span>
+  <div id="typeText" style="display:none">PROJECTS</div>
+  <h1 class="w3-jumbo"><b>
+    <div id="screen" style="font-family: 'Raleway'"></div>
+  </b></h1>
+  <hr>
+  {% for lst in allProds %}
+  <h2 class="w3-xxlarge">{{lst.0.project_category}}</h2>
+  <hr>
+  <!-- Portfolio Gallery Grid -->
+  <div class="row">
+    {% for proj in lst %}
+    <div class="column">
+      <div class="card">
+        <img src="/media/{{proj.main_image}}" alt="Mountains" style="width:100%; height:150px;border:solid">
+        <h3>{{proj.project_name}}</h3>
+        <p>{{proj.main_about|slice:'0:100'}}...</p>
+        <a href="projectView/{{proj.project_id}}"><button style="background-color: #555555; 
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;">Complete Details</button></a>
+      </div>
+    </div>
+
+    <!-- END GRID -->
+    {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    {% endfor %}
+  </div>
+  <br><br>
+  {% endfor %}
+  <br><br><hr>
+  <!-- <h2>OTHERS</h2>
+  <hr>
+  <div class="row">
+    {% for proj in other_projs %}
+    <div class="column">
+      <div class="card">
+        <img src="/media/{{proj.main_image}}" alt="Mountains" style="width:100%; height:150px;border:solid">
+        
+        <h3>{{proj.project_name}}</h3>
+        <p>{{proj.main_about|slice:'0:100'}}</p>
+        <a href="projectView/{{proj.project_id}}"><button style="background-color: #555555; 
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;">Complete Details</button></a>
+      </div>
+    </div> -->
+
+    <!-- END GRID -->
+    <!-- {% if forloop.counter|divisibleby:3 %}
+  </div>
+  <div class="row">
+    {% endif %}
+    {% endfor %}
+  </div> -->
+
+  <!-- END MAIN -->
+</div>
+<br><br>
+
+{% endblock body %}
+{% block js %}
+<script>
+  type(0, 150, "typeText", "screen");
+  function type(i, t, ie, oe) {
+    input = document.getElementById(ie).innerHTML;
+    document.getElementById(oe).innerHTML += input.charAt(i);
+    setTimeout(function () {
+      ((i < input.length - 1) ? type(i + 1, t, ie, oe) : false);
+    }, t);
+  }
+
+</script>
+{% endblock js %}

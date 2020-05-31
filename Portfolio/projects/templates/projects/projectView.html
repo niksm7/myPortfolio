@@ -1,0 +1,147 @@
+{% extends 'projects/basic.html' %}
+{% block title %}{{project.project_name}}{% endblock title %}
+{% block css %}
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+@media screen and (max-width: 600px) {
+  #vid{
+    width: 500px;
+    padding-right: 10px;
+  }
+  #aboutcontent{
+    margin-right: -122px;
+  }
+  #contentsection{
+     margin-right: -122px;
+  }
+}
+@media screen and (min-width: 600px){
+  #vid{
+    width: 700px;
+  }
+  #aboutcontent{
+    margin-right: 40px;
+  }
+  #contentsection{
+    margin-right: 40px;
+  }
+}
+body{
+      background-image: url('/media/main/henry-co--odUkx8C2gg-unsplash.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+{% endblock css %}
+
+{% block body %}
+<div class="w3-main" style="margin-left:310px;">
+<span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div id="typeText" style="display:none">{{project.project_name}}</div>
+<h1><div id="screen"></div></h1>
+<br><hr><br>
+
+{% if project.proj_video != '' %}
+<div class="container">
+{% if project.is_muted %}
+
+<video id="vid" controls loop autoplay muted>
+  <source src="/media/{{project.proj_video}}" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+
+{% else %}
+
+<video width="700" id="vid" controls>
+  <source src="/media/{{project.proj_video}}" type="video/mp4">
+  {% comment %} <source src="mov_bbb.ogg" type="video/ogg"> {% endcomment %}
+  Your browser does not support HTML video.
+</video>
+
+{% endif %}
+
+<script>
+  document.getElementById('vid').play();
+</script>
+
+</div>
+
+{% else %}
+<img src="/media/{{project.main_image}}" alt="Mountains" style="width:70%; height:232px;">
+{% endif %}
+<br><br><br>
+
+<div class="container" style="padding-right: -10px;">
+<h2 style="font-family: 'Allerta Stencil', Sans-serif;" class="w3-xxlarge">ABOUT</h2><hr color="black">
+<h5 style="font-family: 'Comic Sans MS', cursive, sans-serif" id="aboutcontent">{{project.main_about}}</h5>
+<br> <label for="other"><h4><b>Github Code link : </b></h4></label>
+<a href="{{project.git_link}}" target='_blank' id="other" style="font-size: 22px;">{{project.git_link}}</a>
+</div>
+<br><br><br>
+<div class="container">
+<h2 style="font-family: 'Allerta Stencil', Sans-serif;" class="w3-xxlarge">DETAILS</h2><hr color="black">
+<h5 style="font-family: 'Comic Sans MS', cursive, sans-serif" id="contentsection">{{project.content|safe}}</h5>
+</div>
+<br><br><br><hr>
+</div>
+
+{% endblock body %}
+
+{% block js %}
+<script>
+type(0, 150,"typeText","screen");
+function type(i, t, ie, oe) {
+    input = document.getElementById(ie).innerHTML;
+    document.getElementById(oe).innerHTML += input.charAt(i);
+    setTimeout(function(){
+        ((i < input.length - 1) ? type(i+1, t, ie, oe) : false);
+    }, t);
+}
+
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+</script>
+{% endblock js %}

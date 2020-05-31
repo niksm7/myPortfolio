@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<title>PORTFOLIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+h1,h2,h3,h4{font-family: "Raleway", sans-serif}
+body{
+  background-image: url('/media/main/henry-co--odUkx8C2gg-unsplash.jpg');
+  background-repeat: no-repeat;
+}
+hr{
+  height: 1px;
+  background-color: black;
+  border: none;
+}
+</style>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+
+    <!-- Image on the side navbar -->
+    <img src="/media/main/self.jpg" style="width:45%;" class="w3-round"><br><br>
+
+    <h4><b>PORTFOLIO</b></h4>
+
+  </div>
+
+  <!-- This is block containing all the links to various sections -->
+
+  <div class="w3-bar-block">
+
+    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a>
+
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+
+    <a href="#exp" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-briefcase fa-fw w3-margin-right"></i>EXPERIENCE</a>
+
+    <a href="/projects" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cogs fa-fw w3-margin-right"></i>PROJECTS</a>
+
+    <a href="/projects/certifications" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-certificate fa-fw w3-margin-right"></i>CERTIFICATIONS</a>
+
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+
+  </div>
+
+  <!-- Here are the links to social accounts  -->
+
+  <div class="w3-panel w3-large">
+    <a href="https://www.facebook.com/nikhil.mankani" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity" style="font-size:31px;padding:5px"></i></a> 
+    <a href="https://www.instagram.com/niksm07/?hl=en" target="_blank"><i class="fa fa-instagram w3-hover-opacity" style="font-size:31px;padding:5px" target="_blank"></i></a> 
+    <a href="https://www.linkedin.com/in/nikhil-mankani-1a3bb1176/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity" style="font-size:31px;padding:5px" target="_blank"></i></a> 
+    <a href="https://github.com/niksm7" target="_blank"><i class="fa fa-github w3-hover-opacity" style="font-size:48px;padding:5px"></i></a> 
+  </div>
+</nav>
+
+<!-- Navbar ends here -->
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <!-- <h1 class="w3-jumbo"><b>My Portfolio</b></h1> -->
+    <div id="typeText" style="display:none">MY PORTFOLIO</div>
+    <h1 class="w3-jumbo"><b>
+      <div id="screen"></div>
+    </b></h1>
+     </div>
+  </header>
+    
+  <!-- Images of Me -->
+  <div class="w3-row-padding w3-padding-16" id="about">
+    <div class="w3-col m6">
+
+      <!-- The bigger image on main screen -->
+      <img src="/media/main/self.jpg" alt="Me" style="width:70%">
+
+    </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <br>
+    <h2><b>About Me</b></h2>
+    <h4>My name is Nikhil Mankani, and my portfolio is a representation of all I have learned and accomplished as a IT Engineering student.
+    The projects in my portfolio show how my critical thinking skills have evolved over the course of the program.
+    My personal philosophy when it comes to education and learning is to implement what has been learned. Untill a skill is not used to do something productive the skill stays useless so I believe that we should bring up more and more projects rather than just learning.
+    I love developing websites and I am looking for more opportunities to work in coding. </h4>
+    <hr>
+  <!-- end of about -->
+
+  <!-- start of Experience section -->
+
+    <div class="w3-container w3-card w3-margin-bottom" style="border: solid" id="exp">
+        <h2 class="w3-text-black w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><b>Work Experience</b></h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Intern / Abstrakt Invideo Pvt.Ltd</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><span style="color: black;"> April 2018 - July 2019</span></h6>
+          <p>During this internship I learned to create videos using the tool created by the company and also monitored videos for NDTV and Youtube</p>
+          <hr>
+        </div>
+
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Joint Secretary / Indian Society for Techical Education</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><span style="color: black;"> May 2018 - Current</span></h6>
+          <p>During my tenure as the joint secretary of iste I will be conducting workshops, managing events and leading teams.This will test various skills of me and will be a new adventure for me.</p>
+        </div>
+        
+        <br>
+      </div>
+
+  <!-- end of experience section -->
+
+
+  <!-- start of Technical section   -->
+
+  <h2><b>Technical Skills</b></h2>
+    <!-- Progress bars / Skills -->
+    <h4 class="w3-tag"><b>PYTHON</b></h4>
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <h4 class="w3-tag"><b>DJANGO</b></h4 class="w3-tag">
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:95%">95%</div>
+    </div>
+    <h4 class="w3-tag"><b>JAVASCRIPT</b></h4>
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+    <h4 class="w3-tag"><b>SWIFT</b></h4>
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:70%">70%</div>
+    </div>
+    <h4 class="w3-tag"><b>JQUERY</b></h4>
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:85%">85%</div>
+    </div>
+    <h4 class="w3-tag"><b>TKINTER </b></h4>
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:90%">90%</div>
+    </div>
+    <h4 class="w3-tag"><b>SQL</b></h4>
+    <div class="w3-black" style="border: solid black;">
+      <div class="w3-container w3-grey w3-padding w3-center" style="width:80%">80%</div>
+    </div>
+
+
+    <p>
+      <a href="/media/main/NikhilMankani_CV.pdf" download><button class="w3-button w3-dark-grey w3-padding-large w3-margin-top w3-margin-bottom" style="border: solid black;">
+        <i class="fa fa-download w3-margin-right"></i>Download Resume
+      </button></a>
+    </p>
+    <hr>
+  <!-- end of Technical section   -->
+    
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-large w3-grey">
+
+    <h4 id="contact"><b>Contact Me</b></h4>
+    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+
+      <!-- Email address -->
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nikhilsmankani@gmail.com" target="_blank"><div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>nikhilsmankani@gmail.com</p>
+      </div></a>
+
+      <!-- Location -->
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Mumbai, India</p>
+      </div>
+
+      <!-- Phone number -->
+      <a href="tel:7276775259"><div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>7276775259</p>
+      </div></a>
+
+    </div>
+
+    <hr class="w3-opacity">
+    <form action="contact/" method="POST">{% csrf_token %}
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="email" name="Email" required>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" required>
+      </div>
+      <button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Send Message</button>
+    </form>
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+<script>
+  type(0, 150, "typeText", "screen");
+  function type(i, t, ie, oe) {
+    input = document.getElementById(ie).innerHTML;
+    document.getElementById(oe).innerHTML += input.charAt(i);
+    setTimeout(function () {
+      ((i < input.length - 1) ? type(i + 1, t, ie, oe) : false);
+    }, t);
+  }
+
+
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

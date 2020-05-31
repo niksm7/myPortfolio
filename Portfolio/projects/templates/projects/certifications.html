@@ -1,0 +1,99 @@
+{% extends 'projects/basic.html' %}
+
+{% block title %}CERTIFICATIONS{% endblock title %}
+
+{% block css %}
+@media (max-width: 767px) { 
+  .w3-card-4{
+        width: 103%;
+    }
+  #certilist{
+    width: 413px;
+    padding-top: 24px;
+  }
+    
+}
+
+@media (min-width: 767px) { 
+  .w3-card-4{
+      width: 70%;
+  }
+  
+}
+body{
+      background-image: url('/media/main/henry-co--odUkx8C2gg-unsplash.jpg');
+      background-repeat: no-repeat;
+    }
+h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif};
+{% endblock css %}
+{% block body %}
+<div class="w3-main" style="margin-left:310px">
+
+  <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+
+<div id="typeText" style="display:none;font-family: 'Raleway'">CERTIFICATIONS</div>
+<h1 class="w3-jumbo"><b>
+<div id="screen"></div>
+</b></h1>
+<hr>
+  
+<div class="w3-container">
+
+<ul style="list-style-type:none;">
+{% for certi in all_certi %}
+
+<li style="padding-top: 24px;" id="certilist">
+  <div class="w3-card-4" style="border: solid;">
+
+    <div class="w3-container" style="padding-bottom: 14px;background-color: darkgrayb">
+      <img src="/media/projects/certiLogo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:81px;padding-top:10px;background-color: #0d0d0e73;">
+      <h2>{{certi.certi_name}}</h2><br>
+    </div>
+
+    <button class="w3-button w3-block w3-dark-grey collapsed" type="button" data-toggle="collapse" data-target="#collapseThree{{certi.certi_id}}" aria-expanded="false" aria-controls="collapseThree{{certi.certi_id}}"><h5>DETAILS</h5></button>
+    
+    <div id="collapseThree{{certi.certi_id}}" class="collapse">
+      <div class="card-body" style="font-size-adjust: 0.58;">
+        <ul>
+          <li><b>Name:</b> {{certi.certi_name}}</li>
+          <li><b>Issuing Organization:</b> {{certi.org}}</li>
+          <li><b>Issue Date:</b>           {{certi.issue_date}}</li>
+          {% if certi.cred_id != "" %}
+          <li><b>Credential ID:</b>        {{certi.cred_id}}</li>
+          {% endif %}
+          {% if certi.cred_url != "" %}
+          <li><b>Credential URL:</b>       <a href="{{certi.cred_url}}" target="_blank" style="color: #000000;">{{certi.cred_url}}</a></li>
+          {% endif %}
+          <div class="w3-container">
+        </div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</li>
+
+{% endfor %}
+
+</ul>
+</div>
+</div>
+
+
+{% endblock body %}
+
+{% block js %}
+
+<script>
+type(0, 100,"typeText","screen");
+function type(i, t, ie, oe) {
+    input = document.getElementById(ie).innerHTML;
+    document.getElementById(oe).innerHTML += input.charAt(i);
+    setTimeout(function(){
+        ((i < input.length - 1) ? type(i+1, t, ie, oe) : false);
+    }, t);
+}
+
+</script>
+
+{% endblock js %}
